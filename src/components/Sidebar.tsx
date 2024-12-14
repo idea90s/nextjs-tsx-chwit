@@ -12,7 +12,7 @@ const menu = [
     },
   {
     id: 1,
-    name: "Event & HandleChange",
+    name: "Event Handler",
     url: "/event",
   },
   {
