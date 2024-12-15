@@ -40,5 +40,23 @@ export function useMembers() {
     fetchMembers();
   }, []);
 
+  // delete
+  const deleteMember = async (id: number) => {
+    try {
+      await fetch("/api/member", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: 1 }),
+      });
+      setMembers((prevMembers) =>
+        prevMembers.filter((member) => member.id !== id)
+      );
+    } catch (error) {
+      console.error("Error deleting member:", error);
+    }
+  };
+
   return { members, loading, error };
 }

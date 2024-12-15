@@ -17,6 +17,10 @@ const menu = [
     name: "Fetch Data",
     url: "/fetch-data",
   },
+  {
+    name: "Login",
+    url: "/login",
+  },
 ];
 
 export const Sidebar = () => {
