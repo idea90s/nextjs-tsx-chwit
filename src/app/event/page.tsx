@@ -43,7 +43,8 @@ export default function Event() {
     // ใช้ setForm เพื่ออัปเดตค่าของฟอร์มในแบบ dynamic object
     setForm((prev) => ({
       ...prev,
-      [name]: // ใช้การตรวจสอบประเภทของ input
+      // ใช้การตรวจสอบประเภทของ input
+      [name]:
         type === "checkbox"
           ? checked // ถ้าเป็น checkbox ใช้ checked แทน value
           : type === "file"
@@ -99,11 +100,10 @@ export default function Event() {
     <div className="">
       {/* ส่วนแสดงรายละเอียดกิจกรรม */}
       <section className="mb-6">
-        <h1 className="text-2xl font-bold mb-2 text-green-500">Event Handler</h1>
-        <p className="text-white">
-          This section provides details about the event. You can add more
-          information here as needed.
-        </p>
+        <h1 className="text-2xl font-bold mb-2 text-green-500">
+          Event Handler
+        </h1>
+        <p className="text-white">****</p>
       </section>
 
       {/* ฟอร์ม */}
@@ -167,7 +167,12 @@ export default function Event() {
 
         {/* Gender */}
         <div className="flex flex-col">
-          <label>Gender</label>
+          <label>
+            Gender{" "}
+            <span className="text-green-300">
+              {JSON.stringify(form.gender, null, 2)}
+            </span>
+          </label>
           <div className="flex gap-2">
             <input
               type="radio"
@@ -204,7 +209,12 @@ export default function Event() {
 
         {/* Description */}
         <div className="flex flex-col">
-          <label htmlFor="detail">Description</label>
+          <label htmlFor="detail">
+            Description{" "}
+            <span className="text-green-300">
+              {JSON.stringify(form.detail, null, 2)}
+            </span>
+          </label>
           <textarea
             name="detail"
             id="detail"
@@ -224,7 +234,12 @@ export default function Event() {
             checked={form.accept}
             className="text-black"
           />
-          <label htmlFor="accept">Accept Terms</label>
+          <label htmlFor="accept">
+            Accept Terms{" "}
+            <span className="text-green-300">
+              {JSON.stringify(form.accept, null, 2)}
+            </span>
+          </label>
         </div>
 
         <button className="bg-green-500 px-4 py-2 w-full text-black">
